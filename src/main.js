@@ -22,16 +22,17 @@ function escapeHtml(value) {
 }
 
 function getScriptConfig(script) {
-
   if (!script || !script.dataset) {
     return {};
   }
 
-  return {
-    title: script.dataset.title,
-    greeting: script.dataset.greeting,
-    placeholder: script.dataset.placeholder,
-  };
+  return Object.fromEntries(
+    Object.entries({
+      title: script.dataset.title,
+      greeting: script.dataset.greeting,
+      placeholder: script.dataset.placeholder,
+    }).filter(([, value]) => value !== undefined && value !== '')
+  );
 }
 
 function createWidget(config = {}) {
