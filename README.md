@@ -102,6 +102,7 @@ Add optional `data-*` attributes to the same script tag:
   data-title="Lookatmedia™AIAssist"
   data-greeting="How may I help you?"
   data-placeholder="Ask a question..."
+  data-client-id="myriadsolutionz"
 ></script>
 ```
 
@@ -112,6 +113,22 @@ Available attributes:
 | `data-title` | `Lookatmedia™AIAssist` |
 | `data-greeting` | `How may I help you?` |
 | `data-placeholder` | `Ask a question...` |
+| `data-client-id` | `default` |
+
+## Browser-local message history
+
+The widget saves the conversation in the visitor's browser using `localStorage`. It remains available after a page refresh or closing and reopening the browser on the same website and browser profile.
+
+Each client can use a separate storage key:
+
+```html
+<script
+  src="https://widgets.your-domain.com/lam-chat-widget.js"
+  data-client-id="myriadsolutionz"
+></script>
+```
+
+This is frontend-only storage. Messages are not shared across devices or browsers, and they are removed if the visitor clears site data or uses private browsing. Do not store secrets in the browser.
 
 ## 7. React, Vue, or other frontend apps
 
