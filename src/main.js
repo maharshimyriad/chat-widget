@@ -49,7 +49,7 @@ function createWidget(config = {}) {
   host.setAttribute('data-lam-chat-widget', '');
   document.body.append(host);
 
-  const shadowRoot = host.attachShadow({ mode: 'open' });
+  const shadowRoot = host.attachShadow({ mode: 'closed' });
   shadowRoot.innerHTML = `
     <style>${widgetStyles}</style>
     <button class="launcher" type="button" aria-label="Open chat" aria-expanded="false">
